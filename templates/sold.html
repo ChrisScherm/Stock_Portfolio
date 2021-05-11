@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sold
+{% endblock %}
+
+{% block main %}
+    <h1>Sold Stock: {{ stock_name }}</h1>
+    <br>
+    <h1>Price = ${{ stock_price }}</h1>
+    <br>
+    <h1>Symbol = {{ stock_symbol }}</h1>
+    <br>
+    <h1>Number of shares sold: {{ shares_to_sell }}</h1>
+    <br>
+    <h1>Total value of Shares = {{total_value}}</h1>
+{% endblock %}

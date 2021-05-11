@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1 style="color:blue; text-align:center">Current Portfolio</h1>
+    <br>
+    <h3 style="color:green; text-align:center">Current Cash: ${{ current_cash }}</h3>
+    <br>
+    <table style="width:100%; text-align:center">
+        <tr>
+            <th>Stock Name</th>
+            <th>Stock Symbol</th>
+            <th>Volume</th>
+            <th>Share Price</th>
+            <th>Total Value</th>
+        </tr>
+
+        <!--Need to use flask? to generate html for table rows equal to the number of different stocks-->
+        <!--Can be done by putting while loops in app.py to generate code for each row of the table-->
+        <!--portfolio_table will be a string of all the code for the table rows-->
+        <!--{{ portfolio_table }}-->
+        {% for x in range(table_stock_name|length) %}
+        <tr>
+            <td>{{table_stock_name[x]}}</td>
+            <td>{{table_symbols[x]}}</td>
+            <td>{{table_volumes[x]}}</td>
+            <td>{{table_share_price[x]}}</td>
+            <td>{{table_total_value[x]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h3 style="color:green; text-align:center">Current Total Portfolio Value: ${{ current_total_value }}</h3>
+
+
+
+{% endblock %}

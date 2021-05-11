@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block main %}
+    <h2>How much of which stock would you like to sell</h2>
+    <form action="/sell" method="post">
+        <label for="stock_to_sell">Choose a stock to sell:</label>
+        <select name="stock_to_sell" id="stock_to_sell">
+            {% for x in range(current_stocks|length) %}
+            <option value ={{current_stocks[x]["stock_symbol"]}}>{{current_stocks[x]["stock_symbol"]}}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="sell_amount" placeholder="# of shares to sell" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">SELL</button>
+    </form>
+{% endblock %}
