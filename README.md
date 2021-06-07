@@ -1,4 +1,4 @@
-# Stock Test Portfolio
+# Stock Portfolio
 
 ## This is a test site using Python, Flask and SQLite.
 
